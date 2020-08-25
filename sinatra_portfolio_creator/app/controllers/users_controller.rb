@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   post '/signup' do
     @user = User.create(params)
-    erb :'users/portfolio'
+    erb :index
   end
 
   # get '/users/portfolio' do
