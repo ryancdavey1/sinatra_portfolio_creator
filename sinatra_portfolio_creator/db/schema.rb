@@ -10,7 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_25_052118) do
+ActiveRecord::Schema.define(version: 2020_08_25_072722) do
+
+  create_table "projects", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.integer "user_id"
+    t.boolean "javascript"
+    t.boolean "html_and_css"
+    t.boolean "sql"
+    t.boolean "python"
+    t.boolean "java"
+    t.boolean "ruby"
+    t.boolean "swift"
+    t.boolean "c_sharp"
+    t.boolean "c"
+    t.boolean "php"
+    t.string "start_date"
+    t.string "end_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
