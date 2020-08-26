@@ -9,4 +9,10 @@ class ProjectsController < ApplicationController
     end
   end
 
+  get '/projects/new' do
+  end
+
+  post '/projects' do
+  end
+
 end
