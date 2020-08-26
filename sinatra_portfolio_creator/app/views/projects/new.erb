@@ -1,22 +1,82 @@
 <h2>Enter new project details:</h2>
 <form>
-  <input type="text" name="project_title" placeholder="Project Title">
-  <input type="text" name="project_description" placeholder="Project Description">
-  <input type="submit">
+    <div class="container">
+      <div class="row">
+        <div class="col-4">
+          <input type="text" name="project_title" placeholder="Project Title">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <input type="text" name="project_description" placeholder="Project Description">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-2">
+          <input type="checkbox" name="javascript" >
+          <label for="javascript"> Javascript</label><br>
+        </div>
+        <div class="col-2">
+          <input type="checkbox" name="html_and_css">
+          <label for="html_and_css"> HTML/CSS</label><br>
+        </div>
+        <div class="col-2">
+          <input type="checkbox" name="sql">
+          <label for="sql"> SQL</label><br>
+        </div>
+        <div class="col-2">
+          <input type="checkbox" name="python">
+          <label for="python"> Python</label><br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-2">
+          <input type="checkbox" name="java" >
+          <label for="java"> Java</label><br>
+        </div>
+        <div class="col-2">
+          <input type="checkbox" name="ruby">
+          <label for="ruby">Ruby</label><br>
+        </div>
+        <div class="col-2">
+          <input type="checkbox" name="sinatra">
+          <label for="sinatra">Sinatra</label><br>
+        </div>
+        <div class="col-2">
+          <input type="checkbox" name="swift">
+          <label for="swift"> Swift</label><br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-2">
+          <input type="checkbox" name="c_sharp" >
+          <label for="c_sharp"> C#</label><br>
+        </div>
+        <div class="col-2">
+          <input type="checkbox" name="c">
+          <label for="c">C</label><br>
+        </div>
+        <div class="col-2">
+          <input type="checkbox" name="php">
+          <label for="php">PHP</label><br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <input type="text" name="project_start_date" placeholder="Start Date">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <input type="text" name="project_end_date" placeholder="Project End Date">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+        <input type="submit">
+        </div>
+      </div>
+    </div>
+    
+  
 </form>
-
-t.string "title"
-    t.string "description"
-    t.integer "user_id"
-    t.boolean "javascript"
-    t.boolean "html_and_css"
-    t.boolean "sql"
-    t.boolean "python"
-    t.boolean "java"
-    t.boolean "ruby"
-    t.boolean "swift"
-    t.boolean "c_sharp"
-    t.boolean "c"
-    t.boolean "php"
-    t.string "start_date"
-    t.string "end_date"

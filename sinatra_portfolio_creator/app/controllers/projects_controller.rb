@@ -10,6 +10,7 @@ class ProjectsController < ApplicationController
   end
 
   get '/projects/new' do
+    erb :'/projects/new'
   end
 
   post '/projects' do

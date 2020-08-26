@@ -15,11 +15,20 @@
   </head>
   <body>
     <div class="wrapper">
-      <h1>Portfolio List</h1>
+    
+      <div class="row">
+        <div class="col-3">
+        <h1>Portfolio List</h1>
+        </div>
+        <div class="col-1">
+        <p><a href="/signup">Signup</a></p></div>
+        <div class="col-1">
+          <p><a href="/login">Login</a></p></div>
+          <div class="col-1">
+          <p><a href="/logout">Logout</a></p></div>
+      </div>
         <%= yield %>
-        <p><a href="/signup">Signup</a></p>
-        <p><a href="/login">Login</a></p>
-        <p><a href="/logout">Logout</a></p>
+        
 
       <footer class="branding">
         <small>&copy; 2020 <strong>SinatraPortfolioCreator</strong></small>
