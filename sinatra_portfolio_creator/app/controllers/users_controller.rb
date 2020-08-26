@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   post '/signup' do
     @user = User.create(params)
-    erb :index
+    redirect '/login'
   end
 
   get '/login' do
@@ -23,6 +23,10 @@ class UsersController < ApplicationController
     end
   end
 
+  get '/logout' do
+    session.clear
+    redirect '/'
+  end
 
   # get '/users/portfolio' do
   #   erb :'users/portfolio'
