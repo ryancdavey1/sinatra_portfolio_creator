@@ -13,6 +13,11 @@ class ApplicationController < Sinatra::Base
     erb :welcome
   end
 
+  not_found do
+    status 404
+    erb :oops
+  end
+
   helpers do
     def logged_in?
       !!session[:user_id]

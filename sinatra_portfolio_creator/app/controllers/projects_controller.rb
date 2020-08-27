@@ -43,7 +43,6 @@ class ProjectsController < ApplicationController
       start_date: params[:project_start_date],
       end_date: params[:project_end_date]
     )
-    #binding.pry
     if @project.save
       redirect '/projects'
     else
@@ -54,7 +53,7 @@ class ProjectsController < ApplicationController
   patch '/projects/:id' do
       @project = Project.find_by_id(params[:id])
       if (User.find_by(id: @project.user_id) == current_user)
-        @project.update(
+        if @project.update(
           title: params[:project_title], 
           description: params[:project_description],
           javascript: params[:javascript],
@@ -71,13 +70,17 @@ class ProjectsController < ApplicationController
           start_date: params[:project_start_date],
           end_date: params[:project_end_date]
         )
+          redirect '/projects'
+        else 
+          erb :'posts/edit' 
+        end
+      else
+        redirect '/projects'
       end
-      redirect '/projects'
   end
 
   delete '/projects/:id' do
     @project = Project.find_by_id(params[:id])
-    #binding.pry
     if (User.find_by(id: @project.user_id) == current_user)
       @project.delete
     end
@@ -85,6 +88,7 @@ class ProjectsController < ApplicationController
   end
 
   get '/projects/:id' do
+    @project = Project.find_by_id(params[:id])
     
   end
 
