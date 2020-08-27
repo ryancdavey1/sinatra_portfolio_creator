@@ -1,7 +1,17 @@
-<p><a href="/projects/new">Create a project</a></p>
+<div class="container">
+  <p><a href="/projects/new">Create a project</a></p>
+</div>
 <% @projects.each_with_index do |project, index| %>
-    <h4><%= index + 1%>. <%= project.title %></h4>
-    <p><%= project.description %></p>
-    <p>Creator: <%= User.find_by(id: project.user_id).username %></p>
-    <p><a href="/projects/<%= project.id %>/edit">Edit</a></p>
+    <div class="container">
+      <h4><%= index + 1%>. <%= project.title %></h4>
+      <p><%= project.description %></p>
+      <p>Creator: <%= User.find_by(id: project.user_id).username %></p>
+      <%  if User.find_by(id: project.user_id) == current_user %>
+        <p><a href="/projects/<%= project.id %>/edit">Edit</a></p>
+        <form action="/projects/<%= project.id %>" method='post'>
+          <input type="hidden" name="_method" value="delete">
+          <input type="submit" value="Delete">
+        </form>
+      <% end %>
+    </div>
 <% end%>
