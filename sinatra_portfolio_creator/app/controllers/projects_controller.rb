@@ -89,7 +89,7 @@ class ProjectsController < ApplicationController
 
   get '/projects/:id' do
     @project = Project.find_by_id(params[:id])
-    
+    erb :'projects/show'
   end
 
 end

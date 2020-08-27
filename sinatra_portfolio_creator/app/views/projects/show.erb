@@ -1,0 +1,63 @@
+<div class="row">
+   <div class="col-2"><h3>Title: <%= @project.title %></h3></div>
+</div>
+<div class="row">
+  <div class="col-2"><h4>Creator: <%= User.find_by(id: @project.user_id).username %></h4></div>
+  <div class="col-2"><h4>Description: <%= @project.description %></h4></div>
+</div>
+<div class="row">
+  <div class="col-2">
+    <h4>Languages used: </h4>
+    <% if @project.javascript %>
+      <h4>Javascript</h4>
+    <% end %>
+    <% if @project.html_and_css %>
+      <h4>HTML/CSS</h4>
+    <% end %>
+    <% if @project.sql %>
+      <h4>SQL</h4>
+    <% end %>
+    <% if @project.python %>
+      <h4>Python</h4>
+    <% end %>
+    <% if @project.java %>
+      <h4>Java</h4>
+    <% end %>
+    <% if @project.ruby %>
+      <h4>Ruby</h4>
+    <% end %>
+    <% if @project.swift %>
+      <h4>Swift</h4>
+    <% end %>
+    <% if @project.c_sharp %>
+      <h4>C#</h4>
+    <% end %>
+    <% if @project.c %>
+      <h4>C</h4>
+    <% end %>
+    <% if @project.php %>
+      <h4>php</h4>
+    <% end %>
+    <% if @project.sinatra %>
+      <h4>Sinatra</h4>
+    <% end %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-2">
+    <h4>Start Date: <%= @project.start_date %></h4>
+    <h4>End Date: <%= @project.end_date %></h4>
+  </div>
+</div>
+<%  if User.find_by(id: @project.user_id) == current_user %>
+    <div class="row">
+      <div class="col-2"><p><a href="/projects/<%= @project.id %>/edit">Edit</a></p></div>
+    </div>
+    <div class="row">
+      <div class="col-2"><form action="/projects/<%= @project.id %>" method='post'>
+          <input type="hidden" name="_method" value="delete">
+          <input type="submit" value="Delete">
+        </form>
+      </div>
+    </div>
+  <% end %>

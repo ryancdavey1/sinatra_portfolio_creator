@@ -3,15 +3,8 @@
 </div>
 <% @projects.each_with_index do |project, index| %>
     <div class="container">
-      <h4><%= index + 1%>. <%= project.title %></h4>
-      <p><%= project.description %></p>
+      <a href="/projects/<%= project.id %>"><h4><%= index + 1%>. <%= project.title %></h4></a>
       <p>Creator: <%= User.find_by(id: project.user_id).username %></p>
-      <%  if User.find_by(id: project.user_id) == current_user %>
-        <p><a href="/projects/<%= project.id %>/edit">Edit</a></p>
-        <form action="/projects/<%= project.id %>" method='post'>
-          <input type="hidden" name="_method" value="delete">
-          <input type="submit" value="Delete">
-        </form>
-      <% end %>
+      <p><%= project.description %></p>
     </div>
 <% end%>
