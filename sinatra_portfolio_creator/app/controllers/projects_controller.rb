@@ -15,12 +15,18 @@ class ProjectsController < ApplicationController
     erb :'/projects/new'
   end
 
+  get '/projects/:id/edit' do
+    @project = Project.find_by_id(params[:id])
+    erb :'projects/edit'
+  end
+
   post '/projects' do
+
     @project = Project.new(title: params[:project_title], 
       description: params[:project_description], 
       user_id: current_user.id,
-      javascript: params[:java],
-      html_and_css: params[:html_and_css],
+      javascript: params[:java].nil?,
+      html_and_css: params[:html_and_css].nil?,
       sql: params[:sql],
       python: params[:python],
       java: params[:java],
@@ -33,12 +39,36 @@ class ProjectsController < ApplicationController
       start_date: params[:project_start_date],
       end_date: params[:project_end_date]
     )
+    #binding.pry
     if @project.save
       redirect '/projects'
     else
       erb :‘posts/new’
     end
- 
+  end
+
+  patch '/projects/:id' do
+
+      @project = Project.find_by_id(params[:id])
+      
+      @project.update(
+        title: params[:project_title], 
+        description: params[:project_description],
+        javascript: params[:javascript],
+        html_and_css: params[:html_and_css],
+        sql: params[:sql],
+        python: params[:python],
+        java: params[:java],
+        ruby: params[:ruby],
+        swift: params[:swift],
+        c_sharp: params[:c_sharp],
+        c: params[:c],
+        php: params[:php],
+        sinatra: params[:sinatra],
+        start_date: params[:project_start_date],
+        end_date: params[:project_end_date]
+      )
+      redirect '/projects'
   end
 
 end

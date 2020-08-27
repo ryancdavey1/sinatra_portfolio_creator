@@ -1,0 +1,95 @@
+<h2>Edit the project details:</h2>
+<form action="/projects/<%= @project.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+    <div class="container">
+      <div class="row">
+        <div class="col-4">
+          <input type="text" name="project_title" value="<%= @project.title %>">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <input type="text" name="project_description" value="<%= @project.description %>">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-2">
+          <input type="checkbox" name="javascript"
+          <%= @project.javascript ? "checked" : "" %> 
+          >   
+          <label for="javascript"> Javascript</label><br>
+        </div>
+        <div class="col-2">
+          <input type="checkbox" name="html_and_css"
+          <%= @project.html_and_css ? "checked" : "" %> 
+          >
+          <label for="html_and_css"> HTML/CSS</label><br>
+        </div>
+        <div class="col-2">
+          <input type="checkbox" name="sql"
+          <%= @project.sql ? "checked" : "" %> 
+          >
+          <label for="sql"> SQL</label><br>
+        </div>
+        <div class="col-2">
+          <input type="checkbox" name="python"
+          <%= @project.python ? "checked" : "" %> >
+          <label for="python"> Python</label><br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-2">
+          <input type="checkbox" name="java"
+          <%= @project.java ? "checked" : "" %> >
+          <label for="java"> Java</label><br>
+        </div>
+        <div class="col-2">
+          <input type="checkbox" name="ruby"
+          <%= @project.ruby ? "checked" : "" %> >
+          <label for="ruby">Ruby</label><br>
+        </div>
+        <div class="col-2">
+          <input type="checkbox" name="sinatra"
+          <%= @project.sinatra ? "checked" : "" %> >
+          <label for="sinatra">Sinatra</label><br>
+        </div>
+        <div class="col-2">
+          <input type="checkbox" name="swift"
+          <%= @project.swift ? "checked" : "" %> >
+          <label for="swift"> Swift</label><br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-2">
+          <input type="checkbox" name="c_sharp"
+          <%= @project.c_sharp ? "checked" : "" %> >
+          <label for="c_sharp"> C#</label><br>
+        </div>
+        <div class="col-2">
+          <input type="checkbox" name="c"
+          <%= @project.c ? "checked" : "" %> >
+          <label for="c">C</label><br>
+        </div>
+        <div class="col-2">
+          <input type="checkbox" name="php"
+          <%= @project.php ? "checked" : "" %> >
+          <label for="php">PHP</label><br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <input type="text" name="project_start_date" value="<%= @project.start_date%>">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <input type="text" name="project_end_date" value="<%= @project.end_date%>">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+        <input type="submit">
+        </div>
+      </div>
+    </div>
+</form>
