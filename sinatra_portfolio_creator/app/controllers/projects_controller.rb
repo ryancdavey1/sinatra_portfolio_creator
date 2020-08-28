@@ -22,7 +22,7 @@ class ProjectsController < ApplicationController
     else 
       redirect '/projects'
     end
-    end
+  end
 
   post '/projects' do
 
