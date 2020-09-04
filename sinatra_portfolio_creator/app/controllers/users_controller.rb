@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   post '/signup' do
-    if params[:username].empty? || params[:email].empty?
+    if params[:username].empty? || params[:email].empty? || User.find_by(username: params[:username])
       erb :'users/signup'
     else
       user = User.create(params)
